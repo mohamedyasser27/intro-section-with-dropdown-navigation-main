@@ -1,0 +1,47 @@
+:root {
+  --Almost_White: #fafafa;
+--Medium_Gray: #696969;
+--Almost_Black: #141414;
+}
+
+@font-face {
+  font-family: "";
+  src: url("");
+  /* font-weight: ; */
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+body {
+  height: 100%;
+}
+
+.siteContent {}
+
+.imageHero {}
+
+.container {}
+
+.companyDescription {}
+
+.slogan {}
+
+.serviceDescription {}
+
+.learnMoreBtn {}
+
+.trustedCompanies {}
