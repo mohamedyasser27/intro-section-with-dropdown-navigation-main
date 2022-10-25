@@ -24,16 +24,15 @@
     <main>
       <header>
         <img src="./assets/images/logo.svg" alt="site logo" />
-        <img src="./assets/images/icon-menu.svg" alt="open menu btn" />
+
+        <button class="openMenuBtn">
+          <img src="./assets/images/icon-menu.svg" alt="open menu btn" />
+        </button>
       </header>
       <section class="siteContent">
-        <section class="imageHero">
-          <img src="./assets/images/image-hero-mobile.png" alt="cover image" />
-        </section>
-
-        <section class="container">
-          <section class="companyDescription">
-            <h1 class="slogan">Make remote work</h1>
+        <section class="left">
+          <section class="upper">
+            <h1 class="slogan">Make<wbr /> remote work</h1>
             <p class="serviceDescription">
               Get your team in sync, no matter your location. Streamline
               processes, create team rituals, and watch productivity soar.
@@ -62,6 +61,17 @@
               <img src="./assets/images/client-maker.svg" alt="maker company" />
             </article>
           </section>
+        </section>
+
+        <section class="imageHero">
+          <picture>
+            <source
+              srcset="./assets/images/image-hero-desktop.png"
+              media="(min-width: 650px)"
+            />
+            <img src="./assets//images/image-hero-mobile.png" alt="MDN" />
+          </picture>
+
         </section>
       </section>
     </main>

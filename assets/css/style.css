@@ -17,6 +17,10 @@ html {
 * {
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-weight: 18px;
   line-height: 1.6;
 }
 
@@ -40,35 +44,37 @@ header {
   margin-bottom: 25px;
 }
 
-.container {
-  margin-top: 30px;
+.openMenuBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.companyDescription {
-  text-align: center;
+.siteContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 40px;
 }
 
-
-.serviceDescription{
-  margin: 0 20px;
-
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  order: 1;
 }
 
-.imageHero > img {
-  max-width: 100%;
+.upper {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .slogan {
-  font-size: 36px;
+  font-size: calc(24px + 3.5vw);
   margin: 0px;
 }
 
 .serviceDescription {
+  margin: 1vw auto;
   color: var(--Medium_Gray);
 }
 
@@ -85,17 +91,16 @@ header {
 }
 .learnMoreBtn:hover {
   background-color: var(--Almost_White);
-  color: var(--Almost_Black);
-
   border: 2px solid var(--Almost_Black);
+  color: var(--Almost_Black);
 }
 
 .trustedCompanies {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
 }
+/*!done*/
 
 .companyImageContainer {
   display: flex;
@@ -107,4 +112,27 @@ header {
 
 .companyImageContainer > img {
   max-width: 100%;
+}
+
+.imageHero img {
+  max-width: 100%;
+}
+
+
+@media only screen and (min-width: 650px) {
+  .siteContent {
+    width: 95%;
+    margin: 0 auto;
+    height: 750px;
+    flex-direction: row;
+    gap: 10vw;
+  }
+
+  .imageHero img {
+    max-height: 750px;
+  }
+
+  .left {
+    order: -2;
+  }
 }
