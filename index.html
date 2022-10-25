@@ -12,6 +12,13 @@
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -20,7 +27,9 @@
         <img src="./assets/images/icon-menu.svg" alt="open menu btn" />
       </header>
       <section class="siteContent">
-        <section class="imageHero"></section>
+        <section class="imageHero">
+          <img src="./assets/images/image-hero-mobile.png" alt="cover image" />
+        </section>
 
         <section class="container">
           <section class="companyDescription">
@@ -32,16 +41,26 @@
             <button class="learnMoreBtn">Learn more</button>
           </section>
           <section class="trustedCompanies">
-            <img
-              src="./assets/images/client-databiz.svg"
-              alt="databiz company"
-            />
-            <img
-              src="./assets/images/client-audiophile.svg"
-              alt="audiophile  company"
-            />
-            <img src="./assets/images/client-meet.svg" alt="meet company" />
-            <img src="./assets/images/client-maker.svg" alt="maker company" />
+            <article class="companyImageContainer">
+              <img
+                src="./assets/images/client-databiz.svg"
+                alt="databiz company"
+              />
+            </article>
+            <article class="companyImageContainer">
+              <img
+                src="./assets/images/client-audiophile.svg"
+                alt="audiophile  company"
+              />
+            </article>
+
+            <article class="companyImageContainer">
+              <img src="./assets/images/client-meet.svg" alt="meet company" />
+            </article>
+
+            <article class="companyImageContainer">
+              <img src="./assets/images/client-maker.svg" alt="maker company" />
+            </article>
           </section>
         </section>
       </section>
