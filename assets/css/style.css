@@ -35,59 +35,76 @@ main {
 }
 
 header {
-  --paddingValue: 15px;
-  display: flex;
-  justify-content: space-between;
+  /*box-model*/
+  --paddingValue: max(2vw, 2vh);
   padding-top: var(--paddingValue);
   padding-left: var(--paddingValue);
   padding-right: var(--paddingValue);
   margin-bottom: 25px;
+
+  /*flexbox*/
+  display: flex;
+  justify-content: space-between;
 }
 
 .openMenuBtn {
+  /*general*/
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
 .siteContent {
+
+  /*flexbox*/
   display: flex;
   flex-direction: column;
 }
 
+.imageHero img {
+  max-width: 100%;
+}
+
 .left {
+  /*flexbox*/
   display: flex;
   flex-direction: column;
-  gap: 20px;
   order: 1;
 }
 
 .upper {
-  width: 95%;
-  margin: 0 auto;
+  margin: 20px 0px 40px 0px;
   text-align: center;
+
+  /*flexbox*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .slogan {
   font-size: calc(24px + 3.5vw);
-  margin: 0px;
+  margin: 0;
 }
 
 .serviceDescription {
-  margin: 1vw auto;
   color: var(--Medium_Gray);
+  font-weight: 500;
+  width: 95%;
 }
 
 .learnMoreBtn {
+  /*box-model*/
+  border: 2px solid transparent;
+  border-radius: 15px;
   padding: 15px 25px;
 
+  /*general*/
   background-color: var(--Almost_Black);
   color: var(--Almost_White);
   cursor: pointer;
   font-weight: 700;
-
-  border: 2px solid transparent;
-  border-radius: 15px;
 }
 .learnMoreBtn:hover {
   background-color: var(--Almost_White);
@@ -96,43 +113,73 @@ header {
 }
 
 .trustedCompanies {
+  /*box-model*/
+  width: 95%;
+  margin: 0 auto;
+
+  /*flexbox*/
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-/*!done*/
-
 .companyImageContainer {
+  /*flexbox*/
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-  flex: 1;
+  flex: 1 1 0px;
 }
 
-.companyImageContainer > img {
-  max-width: 100%;
+.trustedCompanies img {
+  max-width: 75%;
 }
 
-.imageHero img {
-  max-width: 100%;
-}
+/*!done*/
 
-
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 750px) {
+  main {
+  }
   .siteContent {
-    width: 95%;
+    /*box-model*/
     margin: 0 auto;
-    height: 750px;
+    max-height: 750px;
+    width: 73%;
+
+    /*flexbox*/
     flex-direction: row;
     gap: 10vw;
   }
 
-  .imageHero img {
-    max-height: 750px;
+  .left {
+    gap: 0px;
+    order: -2;
   }
 
-  .left {
-    order: -2;
+  .upper {
+    text-align: start;
+
+    /*flexbox*/
+    display: flex;
+    flex-direction: column;
+    flex-grow: 100;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .learnMoreBtn {
+    align-self: flex-start;
+  }
+
+  .trustedCompanies {
+    width: 100%;
+    margin: 0;
+  }
+
+  .companyImageContainer {
+    justify-content: flex-start;
+  }
+
+  .imageHero img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
