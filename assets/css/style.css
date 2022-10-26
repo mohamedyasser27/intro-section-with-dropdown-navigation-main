@@ -27,6 +27,47 @@ p {
 body {
   height: 100%;
   font-family: "Epilogue", sans-serif;
+  position: relative;
+}
+
+.resetBtnStyle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sideMenu {
+  background-color: var(--Almost_White);
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: width 400ms 0s ease-in,opacity  0s 1ms ease-in;
+}
+
+.invisible {
+  width: 0% !important;
+  opacity: 0;
+  transition: width 400ms 0s ease-in,opacity  0s 420ms ease-in;
+
+
+}
+
+.sideMenu .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  height: 95%;
+  margin: 0 auto;
+}
+.closeMenuBtn {
+  align-self: flex-end;
 }
 
 main {
@@ -47,22 +88,14 @@ header {
   justify-content: space-between;
 }
 
-.openMenuBtn {
-  /*general*/
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
 .siteContent {
-
   /*flexbox*/
   display: flex;
   flex-direction: column;
 }
 
 .imageHero img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .left {
@@ -106,6 +139,7 @@ header {
   cursor: pointer;
   font-weight: 700;
 }
+
 .learnMoreBtn:hover {
   background-color: var(--Almost_White);
   border: 2px solid var(--Almost_Black);
@@ -122,6 +156,7 @@ header {
   flex-direction: row;
   align-items: center;
 }
+
 .companyImageContainer {
   /*flexbox*/
   display: flex;
@@ -135,9 +170,11 @@ header {
 
 /*!done*/
 
-@media only screen and (min-width: 750px) {
-  main {
+@media only screen and (min-width: 811px) {
+  .toggleDesktop {
+    display: none;
   }
+
   .siteContent {
     /*box-model*/
     margin: 0 auto;
