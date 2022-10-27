@@ -8,6 +8,10 @@ html {
   box-sizing: border-box;
   height: 100%;
 }
+
+html,body{
+      overflow-x: hidden;
+}
 *,
 *:before,
 *:after {
@@ -19,15 +23,19 @@ html {
   padding: 0;
 }
 
-p {
-  font-weight: 18px;
-  line-height: 1.6;
-}
-
 body {
   height: 100%;
   font-family: "Epilogue", sans-serif;
   position: relative;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+ol {
+  list-style: none;
 }
 
 .resetBtnStyle {
@@ -40,22 +48,20 @@ body {
   background-color: var(--Almost_White);
   box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.7);
   position: absolute;
-  right: 0px;
-  top: 0px;
   width: 60%;
+  right: 0px;
+  bottom: 0%;
   height: 100%;
   display: flex;
   align-items: center;
   opacity: 1;
-  transition: width 400ms 0s ease-in,opacity  0s 1ms ease-in;
+  transition: width 400ms 0s ease-in, opacity 0s 1ms ease-in;
 }
 
-.invisible {
-  width: 0% !important;
+.sideMenu.invisible {
+  width: 0%;
   opacity: 0;
-  transition: width 400ms 0s ease-in,opacity  0s 420ms ease-in;
-
-
+  transition: width 400ms 0s ease-in, opacity 0s 385ms ease-in;
 }
 
 .sideMenu .content {
@@ -66,8 +72,58 @@ body {
   height: 95%;
   margin: 0 auto;
 }
+
+.sideMenuBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.sideMenuBtns button {
+  color: var(--Medium_Gray);
+  font-weight: 500;
+}
+
+.collapsedBtn {
+  position: relative;
+}
+
+.collapsedBtn::after {
+  content: url("../images/icon-arrow-up.svg");
+  position: absolute;
+  right: -50%;
+  top: 50%;
+  transform: translateY(-60%);
+  margin: auto 0;
+}
+
+.collapsedBtn.expanded::after {
+  content: url("../images/icon-arrow-down.svg");
+}
+
 .closeMenuBtn {
   align-self: flex-end;
+}
+
+.featuresList,
+.companyList {
+  visibility: hidden;
+  display: none;
+}
+
+.featuresList.expandedList,
+.companyList.expandedList {
+  visibility: visible;
+  display: block;
+  transform: translateX(50px);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--Medium_Gray);
+  margin-bottom: 15px;
 }
 
 main {
