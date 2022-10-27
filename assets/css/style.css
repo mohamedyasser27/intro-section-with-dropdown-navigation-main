@@ -9,8 +9,9 @@ html {
   height: 100%;
 }
 
-html,body{
-      overflow-x: hidden;
+html,
+body {
+  overflow-x: hidden;
 }
 *,
 *:before,
@@ -44,24 +45,39 @@ ol {
   cursor: pointer;
 }
 
+.cover {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.cover.invisible {
+  opacity: 0;
+  z-index: -1;
+}
+
 .sideMenu {
   background-color: var(--Almost_White);
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.7);
+  /* box-shadow: 0 0 0 100000px rgba(0, 0, 0, 0.7); */
   position: absolute;
+  z-index: 1;
   width: 60%;
   right: 0px;
   bottom: 0%;
   height: 100%;
   display: flex;
   align-items: center;
+
   opacity: 1;
-  transition: width 400ms 0s ease-in, opacity 0s 1ms ease-in;
+  transform-origin: 100% 50%;
+  transition: transform 250ms 0s ease-in, opacity 0s 1ms ease-in;
 }
 
 .sideMenu.invisible {
-  width: 0%;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
   opacity: 0;
-  transition: width 400ms 0s ease-in, opacity 0s 385ms ease-in;
+  transition: transform 250ms 0s ease-in, opacity 0s 235ms ease-in;
 }
 
 .sideMenu .content {
@@ -78,6 +94,7 @@ ol {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  width: 100%;
 }
 .sideMenuBtns button {
   color: var(--Medium_Gray);
@@ -124,6 +141,18 @@ ol {
   gap: 10px;
   color: var(--Medium_Gray);
   margin-bottom: 15px;
+}
+.loginBtn,
+.registerBtn {
+  align-self: center;
+}
+.loginBtn {
+}
+
+.registerBtn {
+  border: var(--Almost_Black) 1px solid;
+  border-radius: 12px;
+  padding: 10px 30%;
 }
 
 main {
