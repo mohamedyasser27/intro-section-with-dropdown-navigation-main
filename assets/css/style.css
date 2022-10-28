@@ -49,8 +49,10 @@ ol {
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
+
   position: absolute;
 }
+
 .cover.invisible {
   opacity: 0;
   z-index: -1;
@@ -58,50 +60,55 @@ ol {
 
 .sideMenu {
   background-color: var(--Almost_White);
-  /* box-shadow: 0 0 0 100000px rgba(0, 0, 0, 0.7); */
-  position: absolute;
-  z-index: 1;
-  width: 60%;
-  right: 0px;
-  bottom: 0%;
+  opacity: 1;
+
   height: 100%;
+  width: 60%;
+
   display: flex;
   align-items: center;
 
-  opacity: 1;
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  bottom: 0%;
+
   transform-origin: 100% 50%;
   transition: transform 250ms 0s ease-in, opacity 0s 1ms ease-in;
 }
 
 .sideMenu.invisible {
+  opacity: 0;
   transform: scaleX(0);
   transform-origin: 100% 50%;
-  opacity: 0;
   transition: transform 250ms 0s ease-in, opacity 0s 235ms ease-in;
 }
 
 .sideMenu .content {
+  width: 85%;
+  height: 90%;
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 90%;
-  height: 95%;
-  margin: 0 auto;
 }
 
 .sideMenuBtns {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  width: 100%;
 }
+
 .sideMenuBtns button {
   color: var(--Medium_Gray);
   font-weight: 500;
 }
 
 .collapsedBtn {
+  /**relative to ::after*/
   position: relative;
 }
 
@@ -111,11 +118,12 @@ ol {
 
 .collapsedBtn::after {
   content: url("../images/icon-arrow-down.svg");
+  margin: auto 0;
+
   position: absolute;
   right: -50%;
   top: 50%;
   transform: translateY(-60%);
-  margin: auto 0;
 }
 
 .collapsedBtn.expanded::after {
@@ -128,29 +136,27 @@ ol {
 
 .featuresList,
 .companyList {
-  visibility: hidden;
   display: none;
+  transform: translateX(50px);
+
 }
 
 .featuresList.expandedList,
 .companyList.expandedList {
-  visibility: visible;
   display: block;
-  transform: translateX(50px);
 }
 
 .listItem {
+  color: var(--Medium_Gray);
+  margin-bottom: 15px;
+
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--Medium_Gray);
-  margin-bottom: 15px;
 }
 .loginBtn,
 .registerBtn {
   align-self: center;
-}
-.loginBtn {
 }
 
 .registerBtn {
@@ -257,19 +263,16 @@ header {
   max-width: 75%;
 }
 
-/*!done*/
-
 .navbar.toggleDesktop {
   display: none;
 }
+
 @media only screen and (min-width: 811px) {
   header {
     justify-content: flex-start;
     align-items: center;
   }
-  .sideMenu.toggleDesktop,
-  .cover.toggleDesktop,
-  .openMenuBtn.toggleDesktop {
+  .toggleDesktop {
     display: none;
   }
 
@@ -327,6 +330,7 @@ header {
   .navbar button {
     color: var(--Medium_Gray);
   }
+  
   .navbar button:hover {
     color: var(--Almost_Black);
   }
@@ -348,12 +352,16 @@ header {
     position: relative;
   }
 
+  .navBarCompanyList,
+  .navbarFeaturesList {
+    display: none;
+  }
+
   .navbarFeaturesList {
     right: -15px;
   }
 
-  .navBarCompanyList.expandedList,
-  .navbarFeaturesList.expandedList {
+  .expandedList {
     display: block;
     box-shadow: 0px 12px 24px -9px rgba(135, 135, 135, 1);
     border-radius: 10px;
@@ -361,9 +369,5 @@ header {
     background-color: var(--Almost_White);
     position: absolute;
     top: 40px;
-  }
-  .navBarCompanyList,
-  .navbarFeaturesList {
-    display: none;
   }
 }

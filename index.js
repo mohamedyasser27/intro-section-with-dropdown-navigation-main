@@ -5,12 +5,10 @@ let cover = document.querySelector(".cover");
 closeMenuBtn.addEventListener("click", () => {
   sideMenu.classList.toggle("invisible");
   cover.classList.toggle("invisible");
-
 });
 openMenuBtn.addEventListener("click", () => {
   sideMenu.classList.toggle("invisible");
   cover.classList.toggle("invisible");
-
 });
 
 let collapsedBtns = Array.from(document.querySelectorAll(".collapsedBtn"));
